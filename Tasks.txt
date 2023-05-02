@@ -1,0 +1,44 @@
+Visitor management system
+
+Entities:
+
+class Visitor
+
+Username
+passwordHash
+passwordSalt
+Role
+Profile
+
+class Profile
+
+Name
+LastName
+IdentityNumber
+PhoneNumber
+Email
+class Image Image
+class Address Address
+calss Visitor
+
+class Address
+
+City
+Street
+HouseNumber
+ApartmentNumber?
+
+
+TODO:
+
+- Galima uzsiregistruoti
+- Užsiregistravus sukuriamas User'is su default'ine role 'User'.
+- Useris turi galėti sukelti apie save informaciją, kurioje VISI laukai privalomi(Žmogaus informacija), vartotojas neturi galėti sukelti informacijos apie daugiau nei vieną žmogų.
+- Turi būti skirtingi endpoint atnaujint KIEKVIENĄ iš laukų, pvz.: Vardą, asmens kodą, telefono numerį, miestą(negalima atnaujinti į tuščią lauką arba whitespace)
+- Registruojant žmogų turi būti privaloma įkelti profilio nuotrauką, jos dydis turi būti sumažintas iki 200x200(jeigu nuotrauka per maža tai ją ištemps iki 200x200).
+- Turi būti galimybė gauti visą informaciją apie įkeltą žmogų pagal jo ID(nuotrauka grąžinama byte masyvu).
+- Useris neturi galėti atnaujint ne savo žmogaus informacijos, palengvinimo dėlėi sakykime, kad su kiekvienu requestu "iš frontend" ateis User'io ID.
+- Taip pat turi būti 'Admin' rolė, kuri bus nustatoma per duomenų bazę ir ji turės endpoint'ą per kurį galės ištrinti user'į pagal ID(ištrinant user’į ištrinam ir žmogaus info)	
+- Neprisijungus turi būti galima tik registruotis ir prisijungti
+- Autentifikacija ir Autorizacija daroma su Json Web Token'ais.
+
